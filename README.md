@@ -4,6 +4,9 @@ Though I have made this repository... lets see if I commit to it and actually pe
 This will be a.... journey of epic proportions that will most probably take atleast a year or more. LETS START!! (only after my semester exams ofcourse. I too want to get a degree). 
 I will be making this Fedora.
 
+### 0. About OpenGL:
+OpenGL (Open Graphics Library) is a powerful cross-platform API for rendering 2D and 3D vector graphics. Basically, you can make things cool graphics with it. So, all of the graphics rendering of minecraft, or the things that you will see when playing minecraft, will be done via OpenGL.
+
 ### 1. Setting Up OpenGL in Fedora:
 ```
 sudo dnf install mesa-libGL mesa-libGL-devel freeglut freeglut-devel glew-devel
