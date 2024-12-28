@@ -5,13 +5,13 @@ Though I have made this repository... lets see if I commit to it and actually pe
 This will be a.... journey of epic proportions that will most probably take atleast a year or more. LETS START!! (only after my semester exams ofcourse. I too want to get a degree).
 I will be making this in Fedora.
 
-### 1. Setting Up OpenGL and other libraries in Fedora:
+### 1. Installing  OpenGL and other libraries in Fedora:
 
 ```
 sudo dnf install mesa-libGL mesa-libGL-devel freeglut freeglut-devel glew-devel glfw glfw-devel
 ```
 
-### 2. Setting up the compiler (gcc/g++):
+### 2. Installing the compiler (gcc/g++):
 
 I have mine already installed but if you want to do it, just use the command:
 
