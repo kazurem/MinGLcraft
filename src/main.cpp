@@ -1,20 +1,41 @@
-#include <GL/glut.h> // GLUT, includes OpenGL headers
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+#include <iostream>
 
-void display() {
-    glClear(GL_COLOR_BUFFER_BIT); // Clear the color buffer
-    glBegin(GL_TRIANGLES);        // Start drawing a triangle
-        glColor3f(1.0, 0.0, 0.0); glVertex2f(-0.5, -0.5); // Red vertex
-        glColor3f(0.0, 1.0, 0.0); glVertex2f( 0.5, -0.5); // Green vertex
-        glColor3f(0.0, 0.0, 1.0); glVertex2f( 0.0,  0.5); // Blue vertex
-    glEnd();
-    glFlush(); // Render the triangle
-}
+int main() {
+    if (!glfwInit()) {
+        std::cerr << "Failed to initialize GLFW\n";
+        return -1;
+    }
 
-int main(int argc, char** argv) {
-    glutInit(&argc, argv);                    // Initialize GLUT
-    glutCreateWindow("OpenGL Triangle");     // Create a window with the given title
-    glutInitWindowSize(1000, 1000);            // Set the window's initial width & height
-    glutDisplayFunc(display);                // Register display callback handler for window re-paint
-    glutMainLoop();                          // Enter the infinite event-processing loop
+    // Create a window
+    GLFWwindow* window = glfwCreateWindow(800, 600, "OpenGL Basics", nullptr, nullptr);
+    if (!window) {
+        std::cerr << "Failed to create GLFW window\n";
+        glfwTerminate();
+        return -1;
+    }
+    glfwMakeContextCurrent(window);
+
+    // Initialize GLEW
+    glewExperimental = GL_TRUE;
+    if (glewInit() != GLEW_OK) {
+        std::cerr << "Failed to initialize GLEW\n";
+        return -1;
+    }
+
+    // OpenGL version info
+    std::cout << "OpenGL version: " << glGetString(GL_VERSION) << "\n";
+
+    while (!glfwWindowShouldClose(window)) {
+        // Clear the screen
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        // Swap buffers and poll events
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+
+    glfwTerminate();
     return 0;
 }
