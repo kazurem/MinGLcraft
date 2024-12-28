@@ -38,5 +38,5 @@ sudo dnf install gcc g++
 ### 3. Running the code:
 To run the code, I will use the command:
 ```
-g++ main.cpp -o OpenGLApp -lGL -lGLU -lglut && ./OpenGLApp
+g++ main.cpp -o OpenGLApp -lGL -lGLU -lglut -lglfw -lGLEW && ./OpenGLApp
 ```
