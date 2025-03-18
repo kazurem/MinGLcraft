@@ -24,5 +24,5 @@ sudo dnf install gcc g++
 To run the code, I will use the command:
 
 ```
-make && make run
+make run
 ```
